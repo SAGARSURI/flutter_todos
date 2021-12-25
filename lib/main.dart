@@ -6,6 +6,8 @@ import 'package:flutter_todos/core_features/todo/src/di/todo_database_provider.d
 import 'package:flutter_todos/features/todo_list/presentation/todo_list_screen.dart';
 import 'package:go_router/go_router.dart';
 
+import 'router/route_name.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final store = await initTodoDatabase();
@@ -26,10 +28,14 @@ class MyApp extends StatelessWidget {
     initialLocation: '/',
     routes: [
       GoRoute(
-        name: 'home',
+        name: homeRoute,
         path: '/',
         pageBuilder: (context, state) => MaterialPage<void>(
-          child: TodoListScreen(),
+          child: TodoListScreen(
+            navigateToSubmitTodoScreen: (context) {
+              context.goNamed(submitTodoScreenRoute);
+            },
+          ),
         ),
       ),
     ],

@@ -6,7 +6,12 @@ import 'package:flutter_todos/features/todo_list/presentation/widgets/no_todo_wi
 import 'package:flutter_todos/features/todo_list/presentation/widgets/todo_list_widget.dart';
 
 class TodoListScreen extends ConsumerStatefulWidget {
-  const TodoListScreen({Key? key}) : super(key: key);
+  const TodoListScreen({
+    Key? key,
+    required this.navigateToSubmitTodoScreen,
+  }) : super(key: key);
+
+  final Function(BuildContext context) navigateToSubmitTodoScreen;
 
   @override
   _TodoListScreenState createState() => _TodoListScreenState();
@@ -37,7 +42,7 @@ class _TodoListScreenState extends ConsumerState<TodoListScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => widget.navigateToSubmitTodoScreen(context),
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

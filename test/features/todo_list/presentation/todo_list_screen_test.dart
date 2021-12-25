@@ -12,16 +12,26 @@ import 'package:mocktail/mocktail.dart';
 
 void main() {
   late MockGetTodosRepository mockGetTodosRepository;
+  late MockNavigateToAddTodoScreen mockNavigateToSubmitTodoScreen;
 
   setUp(() {
     mockGetTodosRepository = MockGetTodosRepository();
+    mockNavigateToSubmitTodoScreen = MockNavigateToAddTodoScreen();
   });
+
+  setUpAll(() {
+    registerFallbackValue(MockBuildContext());
+  });
+
   testWidgets(
     'show no todo widget WHEN there are no todos',
     (WidgetTester tester) async {
       when(() => mockGetTodosRepository.getTodos()).thenReturn([]);
 
-      await tester.pumpWidget(_testableWidget(mockGetTodosRepository));
+      await tester.pumpWidget(_testableWidget(
+        mockGetTodosRepository,
+        mockNavigateToSubmitTodoScreen,
+      ));
       await tester.pumpAndSettle();
 
       expect(find.byType(TodoListWidget), findsNothing);
@@ -34,7 +44,10 @@ void main() {
       Todo.make(id: 1, title: 'title', note: 'note', date: DateTime(2021)),
     ]);
 
-    await tester.pumpWidget(_testableWidget(mockGetTodosRepository));
+    await tester.pumpWidget(_testableWidget(
+      mockGetTodosRepository,
+      mockNavigateToSubmitTodoScreen,
+    ));
     await tester.pumpAndSettle();
 
     expect(find.byType(TodoListWidget), findsOneWidget);
@@ -46,24 +59,57 @@ void main() {
     (tester) async {
       when(() => mockGetTodosRepository.getTodos()).thenThrow(Exception());
 
-      await tester.pumpWidget(_testableWidget(mockGetTodosRepository));
+      await tester.pumpWidget(_testableWidget(
+        mockGetTodosRepository,
+        mockNavigateToSubmitTodoScreen,
+      ));
       await tester.pumpAndSettle();
 
       expect(find.byType(TodoListWidget), findsNothing);
       expect(find.byType(GenericErrorWidget), findsOneWidget);
     },
   );
+
+  testWidgets(
+    'navigate to AddTodoScreen when button is pressed',
+    (tester) async {
+      await tester.pumpWidget(_testableWidget(
+        mockGetTodosRepository,
+        mockNavigateToSubmitTodoScreen,
+      ));
+      await tester.pump();
+
+      await tester.tap(find.byType(FloatingActionButton));
+      await tester.pump();
+
+      verify(() => mockNavigateToSubmitTodoScreen(any())).called(1);
+    },
+  );
 }
+
+class MockBuildContext extends Mock implements BuildContext {}
 
 class MockGetTodosRepository extends Mock implements GetTodosRepository {}
 
-Widget _testableWidget(MockGetTodosRepository mockGetTodosRepository) {
+abstract class NavigateToSubmitTodoScreen {
+  void call(BuildContext context);
+}
+
+class MockNavigateToAddTodoScreen extends Mock
+    implements NavigateToSubmitTodoScreen {}
+
+Widget _testableWidget(
+  MockGetTodosRepository mockGetTodosRepository,
+  MockNavigateToAddTodoScreen mockNavigateToAddTodoScreen,
+) {
   return ProviderScope(
     overrides: [
       getTodosRepositoryProvider.overrideWithValue(mockGetTodosRepository),
     ],
     child: MaterialApp(
-      home: TodoListScreen(),
+      home: TodoListScreen(
+        navigateToSubmitTodoScreen: mockNavigateToAddTodoScreen,
+      ),
     ),
   );
 }
