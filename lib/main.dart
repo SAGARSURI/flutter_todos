@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_todos/core_features/todo/data.dart';
 import 'package:flutter_todos/core_features/todo/src/di/todo_database_provider.dart';
+import 'package:flutter_todos/features/submit_todo/presentation/submit_todo_screen.dart';
 import 'package:flutter_todos/features/todo_list/presentation/todo_list_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -36,6 +37,13 @@ class MyApp extends StatelessWidget {
               context.goNamed(submitTodoScreenRoute);
             },
           ),
+        ),
+      ),
+      GoRoute(
+        name: submitTodoScreenRoute,
+        path: '/submitTodo',
+        pageBuilder: (context, state) => MaterialPage<void>(
+          child: SubmitTodoScreen(),
         ),
       ),
     ],
