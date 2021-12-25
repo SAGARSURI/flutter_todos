@@ -1,5 +1,6 @@
 import '../model/local_todo.dart';
 import '../../domain/model/todo.dart';
+
 Todo mapTodo(LocalTodo localTodo) {
   return Todo.make(
     id: localTodo.id,

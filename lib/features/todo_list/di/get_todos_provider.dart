@@ -7,10 +7,10 @@ import 'package:flutter_todos/features/todo_list/domain/usecase/get_todos_use_ca
 import 'package:flutter_todos/features/todo_list/presentation/todo_list_notifier.dart';
 import 'package:flutter_todos/features/todo_list/presentation/todo_list_viewmodel.dart';
 
-final getTodosRepositoryProvider = Provider<GetTodosRepository>((ref){
+final getTodosRepositoryProvider = Provider<GetTodosRepository>((ref) {
   final store = ref.read(todoDatabaseProvider);
   final repository =
-  GetTodosRepositoryImpl(todoBox: store.box(), mapTodo: mapTodo);
+      GetTodosRepositoryImpl(todoBox: store.box(), mapTodo: mapTodo);
 
   return repository;
 });

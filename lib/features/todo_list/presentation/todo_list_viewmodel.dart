@@ -5,7 +5,7 @@ part 'todo_list_viewmodel.freezed.dart';
 
 @freezed
 class TodoListViewModel with _$TodoListViewModel {
-const factory TodoListViewModel.loading() = _Loading;
-const factory TodoListViewModel.success(List<Todo> todos) = _Success;
-const factory TodoListViewModel.error(String error) = _Error;
+  const factory TodoListViewModel.loading() = _Loading;
+  const factory TodoListViewModel.success(List<Todo> todos) = _Success;
+  const factory TodoListViewModel.error(String error) = _Error;
 }

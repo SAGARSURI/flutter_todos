@@ -37,9 +37,7 @@ class _TodoListScreenState extends ConsumerState<TodoListScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-
-        },
+        onPressed: () {},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

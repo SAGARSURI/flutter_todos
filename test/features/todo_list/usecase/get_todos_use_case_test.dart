@@ -4,14 +4,14 @@ import 'package:flutter_todos/features/todo_list/domain/usecase/get_todos_use_ca
 import 'package:mocktail/mocktail.dart';
 
 void main() {
-  group(GetTodosUseCase, (){
+  group(GetTodosUseCase, () {
     late MockRepository repository;
-    setUp((){
+    setUp(() {
       repository = MockRepository();
     });
-    test('call SHOULD return todo list WHEN repository is called', (){
+    test('call SHOULD return todo list WHEN repository is called', () {
       when(() => repository.getTodos()).thenReturn([]);
-      
+
       final actual = getTodosUseCase(repository);
 
       expect(actual, equals([]));
