@@ -1,44 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todos/features/submit_todo/presentation/resource/constant.dart';
 
+import 'widgets/todo_title_field/todo_title_field.dart';
+
 class SubmitTodoScreen extends StatelessWidget {
   const SubmitTodoScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          TextField(
-            key: titleFieldKey,
-            decoration: InputDecoration(
-              hintText: 'Title',
+      appBar: AppBar(
+        title: Text('Submit Todo'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TodoTitleField(
+              key: titleFieldKey,
             ),
-          ),
-          const SizedBox(height: 8),
-          TextField(
-            key: dateFieldKey,
-            decoration: InputDecoration(
-              hintText: 'Date',
+            const SizedBox(height: 8),
+            TextField(
+              key: dateFieldKey,
+              decoration: InputDecoration(
+                hintText: 'Date',
+              ),
+              keyboardType: TextInputType.datetime,
             ),
-            keyboardType: TextInputType.datetime,
-          ),
-          const SizedBox(height: 8),
-          TextField(
-            key: noteFieldKey,
-            decoration: InputDecoration(
-              hintText: 'Note',
+            const SizedBox(height: 8),
+            TextField(
+              key: noteFieldKey,
+              decoration: InputDecoration(
+                hintText: 'Note',
+              ),
+              minLines: 5,
+              maxLines: 5,
+              keyboardType: TextInputType.multiline,
             ),
-            minLines: 2,
-            maxLines: 5,
-            keyboardType: TextInputType.multiline,
-          ),
-          const Spacer(),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('Submit'),
-          ),
-        ],
+            const Spacer(),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Submit'),
+            ),
+          ],
+        ),
       ),
     );
   }
