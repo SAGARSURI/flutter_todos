@@ -31,20 +31,16 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: homeRoute,
         path: '/',
-        pageBuilder: (context, state) => MaterialPage<void>(
-          child: TodoListScreen(
-            navigateToSubmitTodoScreen: (context) {
-              context.goNamed(submitTodoScreenRoute);
-            },
-          ),
+        builder: (context, state) => TodoListScreen(
+          navigateToSubmitTodoScreen: (context) {
+            context.pushNamed(submitTodoScreenRoute);
+          },
         ),
       ),
       GoRoute(
         name: submitTodoScreenRoute,
         path: '/submitTodo',
-        pageBuilder: (context, state) => MaterialPage<void>(
-          child: SubmitTodoScreen(),
-        ),
+        builder: (context, state) => SubmitTodoScreen(),
       ),
     ],
     errorPageBuilder: (context, state) => MaterialPage<void>(
