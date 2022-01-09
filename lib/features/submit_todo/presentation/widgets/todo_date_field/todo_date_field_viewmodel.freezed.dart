@@ -21,8 +21,10 @@ class _$TodoDateFieldViewModelTearOff {
     return const _NotValidated();
   }
 
-  _Valid valid() {
-    return const _Valid();
+  _Valid valid(String value) {
+    return _Valid(
+      value,
+    );
   }
 
   _InvalidDateFormatError invalidDateFormatError() {
@@ -42,7 +44,7 @@ mixin _$TodoDateFieldViewModel {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notValidated,
-    required TResult Function() valid,
+    required TResult Function(String value) valid,
     required TResult Function() invalidDateFormatError,
     required TResult Function() invalidDateError,
   }) =>
@@ -50,7 +52,7 @@ mixin _$TodoDateFieldViewModel {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notValidated,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     TResult Function()? invalidDateFormatError,
     TResult Function()? invalidDateError,
   }) =>
@@ -58,7 +60,7 @@ mixin _$TodoDateFieldViewModel {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notValidated,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     TResult Function()? invalidDateFormatError,
     TResult Function()? invalidDateError,
     required TResult orElse(),
@@ -151,7 +153,7 @@ class _$_NotValidated implements _NotValidated {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notValidated,
-    required TResult Function() valid,
+    required TResult Function(String value) valid,
     required TResult Function() invalidDateFormatError,
     required TResult Function() invalidDateError,
   }) {
@@ -162,7 +164,7 @@ class _$_NotValidated implements _NotValidated {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notValidated,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     TResult Function()? invalidDateFormatError,
     TResult Function()? invalidDateError,
   }) {
@@ -173,7 +175,7 @@ class _$_NotValidated implements _NotValidated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notValidated,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     TResult Function()? invalidDateFormatError,
     TResult Function()? invalidDateError,
     required TResult orElse(),
@@ -231,6 +233,7 @@ abstract class _NotValidated implements TodoDateFieldViewModel {
 abstract class _$ValidCopyWith<$Res> {
   factory _$ValidCopyWith(_Valid value, $Res Function(_Valid) then) =
       __$ValidCopyWithImpl<$Res>;
+  $Res call({String value});
 }
 
 /// @nodoc
@@ -242,60 +245,82 @@ class __$ValidCopyWithImpl<$Res>
 
   @override
   _Valid get _value => super._value as _Valid;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_Valid(
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Valid implements _Valid {
-  const _$_Valid();
+  const _$_Valid(this.value);
+
+  @override
+  final String value;
 
   @override
   String toString() {
-    return 'TodoDateFieldViewModel.valid()';
+    return 'TodoDateFieldViewModel.valid(value: $value)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Valid);
+        (other.runtimeType == runtimeType &&
+            other is _Valid &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ValidCopyWith<_Valid> get copyWith =>
+      __$ValidCopyWithImpl<_Valid>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notValidated,
-    required TResult Function() valid,
+    required TResult Function(String value) valid,
     required TResult Function() invalidDateFormatError,
     required TResult Function() invalidDateError,
   }) {
-    return valid();
+    return valid(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notValidated,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     TResult Function()? invalidDateFormatError,
     TResult Function()? invalidDateError,
   }) {
-    return valid?.call();
+    return valid?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notValidated,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     TResult Function()? invalidDateFormatError,
     TResult Function()? invalidDateError,
     required TResult orElse(),
   }) {
     if (valid != null) {
-      return valid();
+      return valid(value);
     }
     return orElse();
   }
@@ -340,7 +365,11 @@ class _$_Valid implements _Valid {
 }
 
 abstract class _Valid implements TodoDateFieldViewModel {
-  const factory _Valid() = _$_Valid;
+  const factory _Valid(String value) = _$_Valid;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$ValidCopyWith<_Valid> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -385,7 +414,7 @@ class _$_InvalidDateFormatError implements _InvalidDateFormatError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notValidated,
-    required TResult Function() valid,
+    required TResult Function(String value) valid,
     required TResult Function() invalidDateFormatError,
     required TResult Function() invalidDateError,
   }) {
@@ -396,7 +425,7 @@ class _$_InvalidDateFormatError implements _InvalidDateFormatError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notValidated,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     TResult Function()? invalidDateFormatError,
     TResult Function()? invalidDateError,
   }) {
@@ -407,7 +436,7 @@ class _$_InvalidDateFormatError implements _InvalidDateFormatError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notValidated,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     TResult Function()? invalidDateFormatError,
     TResult Function()? invalidDateError,
     required TResult orElse(),
@@ -503,7 +532,7 @@ class _$_InvalidDateError implements _InvalidDateError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notValidated,
-    required TResult Function() valid,
+    required TResult Function(String value) valid,
     required TResult Function() invalidDateFormatError,
     required TResult Function() invalidDateError,
   }) {
@@ -514,7 +543,7 @@ class _$_InvalidDateError implements _InvalidDateError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notValidated,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     TResult Function()? invalidDateFormatError,
     TResult Function()? invalidDateError,
   }) {
@@ -525,7 +554,7 @@ class _$_InvalidDateError implements _InvalidDateError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notValidated,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     TResult Function()? invalidDateFormatError,
     TResult Function()? invalidDateError,
     required TResult orElse(),

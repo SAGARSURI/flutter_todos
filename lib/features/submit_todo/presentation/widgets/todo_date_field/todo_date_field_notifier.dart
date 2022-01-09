@@ -14,7 +14,7 @@ class TodoDateFieldNotifier extends StateNotifier<TodoDateFieldViewModel> {
       final inputDate = _dateFormatter.parse(date);
       state = inputDate.isBefore(clock.now())
           ? TodoDateFieldViewModel.invalidDateError()
-          : TodoDateFieldViewModel.valid();
+          : TodoDateFieldViewModel.valid(date);
     } on FormatException {
       state = TodoDateFieldViewModel.invalidDateFormatError();
     }

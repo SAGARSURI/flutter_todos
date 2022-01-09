@@ -6,7 +6,7 @@ part 'todo_date_field_viewmodel.freezed.dart';
 class TodoDateFieldViewModel with _$TodoDateFieldViewModel {
   const factory TodoDateFieldViewModel.notValidated() = _NotValidated;
 
-  const factory TodoDateFieldViewModel.valid() = _Valid;
+  const factory TodoDateFieldViewModel.valid(String value) = _Valid;
 
   const factory TodoDateFieldViewModel.invalidDateFormatError() =
       _InvalidDateFormatError;

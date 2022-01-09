@@ -68,7 +68,7 @@ void main() {
         sut.validate("11/01/2022");
       });
 
-      expect(expectedState, equals(TodoDateFieldViewModel.valid()));
+      expect(expectedState, equals(TodoDateFieldViewModel.valid("11/01/2022")));
     },
   );
 }
