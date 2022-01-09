@@ -11,11 +11,18 @@ class TodoTitleFieldNotifier extends StateNotifier<TodoTitleFieldViewModel> {
   void validate(String input) {
     if (input.length < _minLength) {
       state = TodoTitleFieldViewModel.minLengthError(_minLength);
+
+      return;
     } else if (input.length > _maxLength) {
       state = TodoTitleFieldViewModel.maxLengthError(_maxLength);
+
+      return;
     }
     if (input.contains(_invalidCharRegex)) {
       state = TodoTitleFieldViewModel.invalidCharactersError();
+
+      return;
     }
+    state = TodoTitleFieldViewModel.valid();
   }
 }

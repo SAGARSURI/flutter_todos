@@ -60,4 +60,16 @@ void main() {
       );
     },
   );
+
+  test('state SHOULD be valid WHEN input is valid', () {
+    var expectedState;
+
+    sut.addListener((state) {
+      expectedState = state;
+    });
+
+    sut.validate("This is a title");
+
+    expect(expectedState, equals(TodoTitleFieldViewModel.valid()));
+  });
 }

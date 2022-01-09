@@ -21,6 +21,10 @@ class _$TodoTitleFieldViewModelTearOff {
     return const _NotValidated();
   }
 
+  _Valid valid() {
+    return const _Valid();
+  }
+
   _MinLengthError minLengthError(int minLength) {
     return _MinLengthError(
       minLength,
@@ -46,6 +50,7 @@ mixin _$TodoTitleFieldViewModel {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notValidated,
+    required TResult Function() valid,
     required TResult Function(int minLength) minLengthError,
     required TResult Function(int maxLength) maxLengthError,
     required TResult Function() invalidCharactersError,
@@ -54,6 +59,7 @@ mixin _$TodoTitleFieldViewModel {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notValidated,
+    TResult Function()? valid,
     TResult Function(int minLength)? minLengthError,
     TResult Function(int maxLength)? maxLengthError,
     TResult Function()? invalidCharactersError,
@@ -62,6 +68,7 @@ mixin _$TodoTitleFieldViewModel {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notValidated,
+    TResult Function()? valid,
     TResult Function(int minLength)? minLengthError,
     TResult Function(int maxLength)? maxLengthError,
     TResult Function()? invalidCharactersError,
@@ -71,6 +78,7 @@ mixin _$TodoTitleFieldViewModel {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_NotValidated value) notValidated,
+    required TResult Function(_Valid value) valid,
     required TResult Function(_MinLengthError value) minLengthError,
     required TResult Function(_MaxLengthError value) maxLengthError,
     required TResult Function(_InvalidCharactersError value)
@@ -80,6 +88,7 @@ mixin _$TodoTitleFieldViewModel {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_NotValidated value)? notValidated,
+    TResult Function(_Valid value)? valid,
     TResult Function(_MinLengthError value)? minLengthError,
     TResult Function(_MaxLengthError value)? maxLengthError,
     TResult Function(_InvalidCharactersError value)? invalidCharactersError,
@@ -88,6 +97,7 @@ mixin _$TodoTitleFieldViewModel {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_NotValidated value)? notValidated,
+    TResult Function(_Valid value)? valid,
     TResult Function(_MinLengthError value)? minLengthError,
     TResult Function(_MaxLengthError value)? maxLengthError,
     TResult Function(_InvalidCharactersError value)? invalidCharactersError,
@@ -155,6 +165,7 @@ class _$_NotValidated implements _NotValidated {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notValidated,
+    required TResult Function() valid,
     required TResult Function(int minLength) minLengthError,
     required TResult Function(int maxLength) maxLengthError,
     required TResult Function() invalidCharactersError,
@@ -166,6 +177,7 @@ class _$_NotValidated implements _NotValidated {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notValidated,
+    TResult Function()? valid,
     TResult Function(int minLength)? minLengthError,
     TResult Function(int maxLength)? maxLengthError,
     TResult Function()? invalidCharactersError,
@@ -177,6 +189,7 @@ class _$_NotValidated implements _NotValidated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notValidated,
+    TResult Function()? valid,
     TResult Function(int minLength)? minLengthError,
     TResult Function(int maxLength)? maxLengthError,
     TResult Function()? invalidCharactersError,
@@ -192,6 +205,7 @@ class _$_NotValidated implements _NotValidated {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_NotValidated value) notValidated,
+    required TResult Function(_Valid value) valid,
     required TResult Function(_MinLengthError value) minLengthError,
     required TResult Function(_MaxLengthError value) maxLengthError,
     required TResult Function(_InvalidCharactersError value)
@@ -204,6 +218,7 @@ class _$_NotValidated implements _NotValidated {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_NotValidated value)? notValidated,
+    TResult Function(_Valid value)? valid,
     TResult Function(_MinLengthError value)? minLengthError,
     TResult Function(_MaxLengthError value)? maxLengthError,
     TResult Function(_InvalidCharactersError value)? invalidCharactersError,
@@ -215,6 +230,7 @@ class _$_NotValidated implements _NotValidated {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_NotValidated value)? notValidated,
+    TResult Function(_Valid value)? valid,
     TResult Function(_MinLengthError value)? minLengthError,
     TResult Function(_MaxLengthError value)? maxLengthError,
     TResult Function(_InvalidCharactersError value)? invalidCharactersError,
@@ -229,6 +245,128 @@ class _$_NotValidated implements _NotValidated {
 
 abstract class _NotValidated implements TodoTitleFieldViewModel {
   const factory _NotValidated() = _$_NotValidated;
+}
+
+/// @nodoc
+abstract class _$ValidCopyWith<$Res> {
+  factory _$ValidCopyWith(_Valid value, $Res Function(_Valid) then) =
+      __$ValidCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ValidCopyWithImpl<$Res>
+    extends _$TodoTitleFieldViewModelCopyWithImpl<$Res>
+    implements _$ValidCopyWith<$Res> {
+  __$ValidCopyWithImpl(_Valid _value, $Res Function(_Valid) _then)
+      : super(_value, (v) => _then(v as _Valid));
+
+  @override
+  _Valid get _value => super._value as _Valid;
+}
+
+/// @nodoc
+
+class _$_Valid implements _Valid {
+  const _$_Valid();
+
+  @override
+  String toString() {
+    return 'TodoTitleFieldViewModel.valid()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Valid);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() notValidated,
+    required TResult Function() valid,
+    required TResult Function(int minLength) minLengthError,
+    required TResult Function(int maxLength) maxLengthError,
+    required TResult Function() invalidCharactersError,
+  }) {
+    return valid();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? notValidated,
+    TResult Function()? valid,
+    TResult Function(int minLength)? minLengthError,
+    TResult Function(int maxLength)? maxLengthError,
+    TResult Function()? invalidCharactersError,
+  }) {
+    return valid?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notValidated,
+    TResult Function()? valid,
+    TResult Function(int minLength)? minLengthError,
+    TResult Function(int maxLength)? maxLengthError,
+    TResult Function()? invalidCharactersError,
+    required TResult orElse(),
+  }) {
+    if (valid != null) {
+      return valid();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NotValidated value) notValidated,
+    required TResult Function(_Valid value) valid,
+    required TResult Function(_MinLengthError value) minLengthError,
+    required TResult Function(_MaxLengthError value) maxLengthError,
+    required TResult Function(_InvalidCharactersError value)
+        invalidCharactersError,
+  }) {
+    return valid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NotValidated value)? notValidated,
+    TResult Function(_Valid value)? valid,
+    TResult Function(_MinLengthError value)? minLengthError,
+    TResult Function(_MaxLengthError value)? maxLengthError,
+    TResult Function(_InvalidCharactersError value)? invalidCharactersError,
+  }) {
+    return valid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NotValidated value)? notValidated,
+    TResult Function(_Valid value)? valid,
+    TResult Function(_MinLengthError value)? minLengthError,
+    TResult Function(_MaxLengthError value)? maxLengthError,
+    TResult Function(_InvalidCharactersError value)? invalidCharactersError,
+    required TResult orElse(),
+  }) {
+    if (valid != null) {
+      return valid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Valid implements TodoTitleFieldViewModel {
+  const factory _Valid() = _$_Valid;
 }
 
 /// @nodoc
@@ -297,6 +435,7 @@ class _$_MinLengthError implements _MinLengthError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notValidated,
+    required TResult Function() valid,
     required TResult Function(int minLength) minLengthError,
     required TResult Function(int maxLength) maxLengthError,
     required TResult Function() invalidCharactersError,
@@ -308,6 +447,7 @@ class _$_MinLengthError implements _MinLengthError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notValidated,
+    TResult Function()? valid,
     TResult Function(int minLength)? minLengthError,
     TResult Function(int maxLength)? maxLengthError,
     TResult Function()? invalidCharactersError,
@@ -319,6 +459,7 @@ class _$_MinLengthError implements _MinLengthError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notValidated,
+    TResult Function()? valid,
     TResult Function(int minLength)? minLengthError,
     TResult Function(int maxLength)? maxLengthError,
     TResult Function()? invalidCharactersError,
@@ -334,6 +475,7 @@ class _$_MinLengthError implements _MinLengthError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_NotValidated value) notValidated,
+    required TResult Function(_Valid value) valid,
     required TResult Function(_MinLengthError value) minLengthError,
     required TResult Function(_MaxLengthError value) maxLengthError,
     required TResult Function(_InvalidCharactersError value)
@@ -346,6 +488,7 @@ class _$_MinLengthError implements _MinLengthError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_NotValidated value)? notValidated,
+    TResult Function(_Valid value)? valid,
     TResult Function(_MinLengthError value)? minLengthError,
     TResult Function(_MaxLengthError value)? maxLengthError,
     TResult Function(_InvalidCharactersError value)? invalidCharactersError,
@@ -357,6 +500,7 @@ class _$_MinLengthError implements _MinLengthError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_NotValidated value)? notValidated,
+    TResult Function(_Valid value)? valid,
     TResult Function(_MinLengthError value)? minLengthError,
     TResult Function(_MaxLengthError value)? maxLengthError,
     TResult Function(_InvalidCharactersError value)? invalidCharactersError,
@@ -444,6 +588,7 @@ class _$_MaxLengthError implements _MaxLengthError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notValidated,
+    required TResult Function() valid,
     required TResult Function(int minLength) minLengthError,
     required TResult Function(int maxLength) maxLengthError,
     required TResult Function() invalidCharactersError,
@@ -455,6 +600,7 @@ class _$_MaxLengthError implements _MaxLengthError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notValidated,
+    TResult Function()? valid,
     TResult Function(int minLength)? minLengthError,
     TResult Function(int maxLength)? maxLengthError,
     TResult Function()? invalidCharactersError,
@@ -466,6 +612,7 @@ class _$_MaxLengthError implements _MaxLengthError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notValidated,
+    TResult Function()? valid,
     TResult Function(int minLength)? minLengthError,
     TResult Function(int maxLength)? maxLengthError,
     TResult Function()? invalidCharactersError,
@@ -481,6 +628,7 @@ class _$_MaxLengthError implements _MaxLengthError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_NotValidated value) notValidated,
+    required TResult Function(_Valid value) valid,
     required TResult Function(_MinLengthError value) minLengthError,
     required TResult Function(_MaxLengthError value) maxLengthError,
     required TResult Function(_InvalidCharactersError value)
@@ -493,6 +641,7 @@ class _$_MaxLengthError implements _MaxLengthError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_NotValidated value)? notValidated,
+    TResult Function(_Valid value)? valid,
     TResult Function(_MinLengthError value)? minLengthError,
     TResult Function(_MaxLengthError value)? maxLengthError,
     TResult Function(_InvalidCharactersError value)? invalidCharactersError,
@@ -504,6 +653,7 @@ class _$_MaxLengthError implements _MaxLengthError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_NotValidated value)? notValidated,
+    TResult Function(_Valid value)? valid,
     TResult Function(_MinLengthError value)? minLengthError,
     TResult Function(_MaxLengthError value)? maxLengthError,
     TResult Function(_InvalidCharactersError value)? invalidCharactersError,
@@ -567,6 +717,7 @@ class _$_InvalidCharactersError implements _InvalidCharactersError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notValidated,
+    required TResult Function() valid,
     required TResult Function(int minLength) minLengthError,
     required TResult Function(int maxLength) maxLengthError,
     required TResult Function() invalidCharactersError,
@@ -578,6 +729,7 @@ class _$_InvalidCharactersError implements _InvalidCharactersError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notValidated,
+    TResult Function()? valid,
     TResult Function(int minLength)? minLengthError,
     TResult Function(int maxLength)? maxLengthError,
     TResult Function()? invalidCharactersError,
@@ -589,6 +741,7 @@ class _$_InvalidCharactersError implements _InvalidCharactersError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notValidated,
+    TResult Function()? valid,
     TResult Function(int minLength)? minLengthError,
     TResult Function(int maxLength)? maxLengthError,
     TResult Function()? invalidCharactersError,
@@ -604,6 +757,7 @@ class _$_InvalidCharactersError implements _InvalidCharactersError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_NotValidated value) notValidated,
+    required TResult Function(_Valid value) valid,
     required TResult Function(_MinLengthError value) minLengthError,
     required TResult Function(_MaxLengthError value) maxLengthError,
     required TResult Function(_InvalidCharactersError value)
@@ -616,6 +770,7 @@ class _$_InvalidCharactersError implements _InvalidCharactersError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_NotValidated value)? notValidated,
+    TResult Function(_Valid value)? valid,
     TResult Function(_MinLengthError value)? minLengthError,
     TResult Function(_MaxLengthError value)? maxLengthError,
     TResult Function(_InvalidCharactersError value)? invalidCharactersError,
@@ -627,6 +782,7 @@ class _$_InvalidCharactersError implements _InvalidCharactersError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_NotValidated value)? notValidated,
+    TResult Function(_Valid value)? valid,
     TResult Function(_MinLengthError value)? minLengthError,
     TResult Function(_MaxLengthError value)? maxLengthError,
     TResult Function(_InvalidCharactersError value)? invalidCharactersError,

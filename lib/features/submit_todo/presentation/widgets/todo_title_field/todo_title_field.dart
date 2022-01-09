@@ -14,7 +14,10 @@ class TodoTitleField extends ConsumerWidget {
     final notifier = ref.watch(todoTitleFieldNotifierProvider.notifier);
 
     return viewModel.maybeWhen(
-      notValidated: () => _getField(notifier),
+      valid: () {
+        //TODO return the value to the parent
+        return _getField(notifier);
+      },
       minLengthError: (minLength) =>
           _getField(notifier, errorMessage: 'Title is too short'),
       maxLengthError: (maxLength) =>
@@ -23,10 +26,7 @@ class TodoTitleField extends ConsumerWidget {
         notifier,
         errorMessage: 'Title cannot have invalid characters',
       ),
-      orElse: () {
-        
-        return _getField(notifier);
-      },
+      orElse: () => _getField(notifier),
     );
   }
 
