@@ -31,7 +31,7 @@ void main() {
     expect(expectedState, equals(TodoTitleFieldViewModel.minLengthError(3)));
   });
 
-  test('state SHOULD be maxLengthError WHEN input has length more then 8', () {
+  test('state SHOULD be maxLengthError WHEN input has length more then 20', () {
     var expectedState;
 
     sut.addListener((state) {
@@ -40,7 +40,7 @@ void main() {
 
     sut.validate("it's not a todo title");
 
-    expect(expectedState, equals(TodoTitleFieldViewModel.maxLengthError(8)));
+    expect(expectedState, equals(TodoTitleFieldViewModel.maxLengthError(20)));
   });
 
   test(

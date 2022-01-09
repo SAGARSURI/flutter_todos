@@ -5,7 +5,7 @@ class TodoTitleFieldNotifier extends StateNotifier<TodoTitleFieldViewModel> {
   TodoTitleFieldNotifier() : super(TodoTitleFieldViewModel.notValidated());
 
   final _minLength = 3;
-  final _maxLength = 8;
+  final _maxLength = 20;
   final _invalidCharRegex = RegExp("""[!@#\$%^&*();/]""");
 
   void validate(String input) {
