@@ -57,21 +57,6 @@ void main() {
     );
 
     test(
-      'state SHOULD be invalidChars WHEN the input has only special characters',
-      () {
-        var expectedState;
-
-        sut.addListener((state) {
-          expectedState = state;
-        });
-
-        sut.validate('!@#\$%^&*()');
-
-        expect(expectedState, equals(TodoNoteFieldViewModel.invalidChars()));
-      },
-    );
-
-    test(
       'state SHOULD be maxLengthError WHEN the input has less then 100 chars',
       () {
         var expectedState;

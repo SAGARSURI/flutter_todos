@@ -6,7 +6,6 @@ class TodoNoteFieldNotifier extends StateNotifier<TodoNoteFieldViewModel> {
 
   final _minLength = 10;
   final _maxLength = 100;
-  final _invalidChars = RegExp("""[!@#\$%^&*();/]""");
 
   void validate(String input) {
     final trimmedInput = input.trim();
@@ -14,8 +13,6 @@ class TodoNoteFieldNotifier extends StateNotifier<TodoNoteFieldViewModel> {
       state = TodoNoteFieldViewModel.minLengthError(_minLength);
     } else if (trimmedInput.length > 100) {
       state = TodoNoteFieldViewModel.maxLengthError(_maxLength);
-    } else if (trimmedInput.contains(_invalidChars)) {
-      state = TodoNoteFieldViewModel.invalidChars();
     } else {
       state = TodoNoteFieldViewModel.valid();
     }
