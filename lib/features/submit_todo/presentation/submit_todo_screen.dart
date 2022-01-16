@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todos/features/submit_todo/presentation/resource/constant.dart';
 import 'package:flutter_todos/features/submit_todo/presentation/widgets/todo_date_field/todo_date_field.dart';
+import 'package:flutter_todos/features/submit_todo/presentation/widgets/todo_note_field/todo_note_field.dart';
 
 import 'widgets/todo_title_field/todo_title_field.dart';
 
@@ -18,23 +19,11 @@ class SubmitTodoScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TodoTitleField(
-              key: titleFieldKey,
-            ),
+            TodoTitleField(key: titleFieldKey),
             const SizedBox(height: 8),
-            TodoDateField(
-              key: dateFieldKey,
-            ),
+            TodoDateField(key: dateFieldKey),
             const SizedBox(height: 8),
-            TextField(
-              key: noteFieldKey,
-              decoration: InputDecoration(
-                hintText: 'Note',
-              ),
-              minLines: 5,
-              maxLines: 5,
-              keyboardType: TextInputType.multiline,
-            ),
+            TodoNoteField(key: noteFieldKey),
             const Spacer(),
             ElevatedButton(
               onPressed: () {},

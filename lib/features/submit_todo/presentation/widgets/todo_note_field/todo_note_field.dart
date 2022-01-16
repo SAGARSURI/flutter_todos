@@ -27,9 +27,13 @@ class TodoNoteField extends ConsumerWidget {
   }) {
     return TextField(
       decoration: InputDecoration(
+        hintText: 'Note',
         errorText: errorMessage,
       ),
       onChanged: notifier.validate,
+      minLines: 5,
+      maxLines: 5,
+      keyboardType: TextInputType.multiline,
     );
   }
 }
