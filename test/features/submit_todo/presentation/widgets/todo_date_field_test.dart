@@ -42,6 +42,21 @@ void main() {
       });
     },
   );
+
+  testWidgets(
+    'TodoDateField SHOULD not show error message WHEN input date is valid',
+        (tester) async {
+      withClock(Clock.fixed(DateTime(2022, 01, 10)), () async {
+        await tester.pumpWidget(_testableWidget());
+
+        await tester.enterText(find.byType(TodoDateField), '11/01/2022');
+        await tester.pump();
+
+        final actual = find.byType(TextField).evaluate().single.widget as TextField;
+        expect(actual.decoration?.errorText, isNull);
+      });
+    },
+  );
 }
 
 Widget _testableWidget() {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_todos/features/submit_todo/di/submit_todo_provider.dart';
 import 'package:flutter_todos/features/submit_todo/presentation/widgets/todo_date_field/todo_date_field_notifier.dart';
+import 'package:flutter_todos/features/submit_todo/presentation/widgets/todo_date_field/todo_date_formatter.dart';
 
 class TodoDateField extends ConsumerWidget {
   const TodoDateField({Key? key}) : super(key: key);
@@ -14,11 +14,13 @@ class TodoDateField extends ConsumerWidget {
 
     return viewModel.when(
       notValidated: () => _getField(notifier),
-      valid: (value) => throw UnimplementedError(),
+      valid: (value) {
+        // TODO return the value to the parent
+        return _getField(notifier);
+      },
       invalidDateFormatError: () =>
           _getField(notifier, errorMessage: 'Invalid date format'),
-      invalidDateError: () =>
-          _getField(notifier, errorMessage: 'Invalid date'),
+      invalidDateError: () => _getField(notifier, errorMessage: 'Invalid date'),
     );
   }
 
@@ -29,6 +31,7 @@ class TodoDateField extends ConsumerWidget {
         hintText: 'DD/MM/YYYY',
         errorText: errorMessage,
       ),
+      inputFormatters: [TodoDateFormatter()],
       onChanged: (value) {
         notifier.validate(value);
       },
