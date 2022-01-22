@@ -77,7 +77,7 @@ void main() {
 
         await tester.enterText(find.byType(TodoDateField), '11/01/2022');
         await tester.pump();
-        
+
         verify(() => mockOnValidDate(any())).called(1);
       });
     },
