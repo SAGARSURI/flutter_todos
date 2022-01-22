@@ -9,11 +9,12 @@ class TodoTitleFieldNotifier extends StateNotifier<TodoTitleFieldViewModel> {
   final _invalidCharRegex = RegExp("""[!@#\$%^&*();/]""");
 
   void validate(String input) {
-    if (input.length < _minLength) {
+    final trimmedInput = input.trim();
+    if (trimmedInput.length < _minLength) {
       state = TodoTitleFieldViewModel.minLengthError(_minLength);
 
       return;
-    } else if (input.length > _maxLength) {
+    } else if (trimmedInput.length > _maxLength) {
       state = TodoTitleFieldViewModel.maxLengthError(_maxLength);
 
       return;
@@ -23,6 +24,6 @@ class TodoTitleFieldNotifier extends StateNotifier<TodoTitleFieldViewModel> {
 
       return;
     }
-    state = TodoTitleFieldViewModel.valid();
+    state = TodoTitleFieldViewModel.valid(trimmedInput);
   }
 }

@@ -19,7 +19,10 @@ class SubmitTodoScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TodoTitleField(key: titleFieldKey),
+            TodoTitleField(
+              key: titleFieldKey,
+              onValidTitle: (value) {},
+            ),
             const SizedBox(height: 8),
             TodoDateField(
               key: dateFieldKey,

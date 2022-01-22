@@ -5,7 +5,7 @@ part 'todo_title_field_viewmodel.freezed.dart';
 class TodoTitleFieldViewModel with _$TodoTitleFieldViewModel {
   const factory TodoTitleFieldViewModel.notValidated() = _NotValidated;
 
-  const factory TodoTitleFieldViewModel.valid() = _Valid;
+  const factory TodoTitleFieldViewModel.valid(String value) = _Valid;
 
   const factory TodoTitleFieldViewModel.minLengthError(int minLength) =
       _MinLengthError;

@@ -6,7 +6,10 @@ import 'package:flutter_todos/features/submit_todo/presentation/widgets/todo_tit
 class TodoTitleField extends ConsumerWidget {
   const TodoTitleField({
     Key? key,
+    required this.onValidTitle,
   }) : super(key: key);
+
+  final Function(String) onValidTitle;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -14,8 +17,9 @@ class TodoTitleField extends ConsumerWidget {
     final notifier = ref.watch(todoTitleFieldNotifierProvider.notifier);
 
     return viewModel.maybeWhen(
-      valid: () {
-        //TODO return the value to the parent
+      valid: (value) {
+        onValidTitle(value);
+
         return _getField(notifier);
       },
       minLengthError: (minLength) =>
