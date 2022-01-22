@@ -21,7 +21,10 @@ class SubmitTodoScreen extends StatelessWidget {
           children: [
             TodoTitleField(key: titleFieldKey),
             const SizedBox(height: 8),
-            TodoDateField(key: dateFieldKey),
+            TodoDateField(
+              key: dateFieldKey,
+              onValidDate: (value) {},
+            ),
             const SizedBox(height: 8),
             TodoNoteField(key: noteFieldKey),
             const Spacer(),

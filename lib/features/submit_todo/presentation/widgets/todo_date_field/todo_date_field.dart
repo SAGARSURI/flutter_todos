@@ -3,9 +3,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_todos/features/submit_todo/di/submit_todo_provider.dart';
 import 'package:flutter_todos/features/submit_todo/presentation/widgets/todo_date_field/todo_date_field_notifier.dart';
 import 'package:flutter_todos/features/submit_todo/presentation/widgets/todo_date_field/todo_date_formatter.dart';
+import 'package:fpdart/fpdart.dart';
 
 class TodoDateField extends ConsumerWidget {
-  const TodoDateField({Key? key}) : super(key: key);
+  const TodoDateField({
+    Key? key,
+    required this.onValidDate,
+  }) : super(key: key);
+
+  final Function(String) onValidDate;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -15,7 +21,8 @@ class TodoDateField extends ConsumerWidget {
     return viewModel.when(
       notValidated: () => _getField(notifier),
       valid: (value) {
-        // TODO return the value to the parent
+        onValidDate(value);
+
         return _getField(notifier);
       },
       invalidDateFormatError: () =>
