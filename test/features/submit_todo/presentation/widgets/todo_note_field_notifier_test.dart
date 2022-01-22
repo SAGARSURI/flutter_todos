@@ -40,7 +40,7 @@ void main() {
 
     test(
       'state SHOULD be minLengthError WHEN the input has only spaces',
-          () {
+      () {
         var expectedState;
 
         sut.addListener((state) {

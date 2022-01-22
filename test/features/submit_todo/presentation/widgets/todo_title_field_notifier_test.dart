@@ -31,7 +31,9 @@ void main() {
     expect(expectedState, equals(TodoTitleFieldViewModel.minLengthError(3)));
   });
 
-  test('state SHOULD be minLengthError WHEN input has extra space after 2 chars', () {
+  test(
+      'state SHOULD be minLengthError WHEN input has extra space after 2 chars',
+      () {
     var expectedState;
 
     sut.addListener((state) {
@@ -82,6 +84,7 @@ void main() {
 
     sut.validate("This is a title");
 
-    expect(expectedState, equals(TodoTitleFieldViewModel.valid("This is a title")));
+    expect(expectedState,
+        equals(TodoTitleFieldViewModel.valid("This is a title")));
   });
 }
