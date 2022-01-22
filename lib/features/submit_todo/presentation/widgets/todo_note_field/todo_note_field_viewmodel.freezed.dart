@@ -33,8 +33,10 @@ class _$TodoNoteFieldViewModelTearOff {
     );
   }
 
-  _Valid valid() {
-    return const _Valid();
+  _Valid valid(String value) {
+    return _Valid(
+      value,
+    );
   }
 }
 
@@ -48,7 +50,7 @@ mixin _$TodoNoteFieldViewModel {
     required TResult Function() notValidated,
     required TResult Function(int value) minLengthError,
     required TResult Function(int value) maxLengthError,
-    required TResult Function() valid,
+    required TResult Function(String value) valid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,7 +58,7 @@ mixin _$TodoNoteFieldViewModel {
     TResult Function()? notValidated,
     TResult Function(int value)? minLengthError,
     TResult Function(int value)? maxLengthError,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,7 +66,7 @@ mixin _$TodoNoteFieldViewModel {
     TResult Function()? notValidated,
     TResult Function(int value)? minLengthError,
     TResult Function(int value)? maxLengthError,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -156,7 +158,7 @@ class _$_NotValidated implements _NotValidated {
     required TResult Function() notValidated,
     required TResult Function(int value) minLengthError,
     required TResult Function(int value) maxLengthError,
-    required TResult Function() valid,
+    required TResult Function(String value) valid,
   }) {
     return notValidated();
   }
@@ -167,7 +169,7 @@ class _$_NotValidated implements _NotValidated {
     TResult Function()? notValidated,
     TResult Function(int value)? minLengthError,
     TResult Function(int value)? maxLengthError,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
   }) {
     return notValidated?.call();
   }
@@ -178,7 +180,7 @@ class _$_NotValidated implements _NotValidated {
     TResult Function()? notValidated,
     TResult Function(int value)? minLengthError,
     TResult Function(int value)? maxLengthError,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     required TResult orElse(),
   }) {
     if (notValidated != null) {
@@ -296,7 +298,7 @@ class _$_MinLengthError implements _MinLengthError {
     required TResult Function() notValidated,
     required TResult Function(int value) minLengthError,
     required TResult Function(int value) maxLengthError,
-    required TResult Function() valid,
+    required TResult Function(String value) valid,
   }) {
     return minLengthError(value);
   }
@@ -307,7 +309,7 @@ class _$_MinLengthError implements _MinLengthError {
     TResult Function()? notValidated,
     TResult Function(int value)? minLengthError,
     TResult Function(int value)? maxLengthError,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
   }) {
     return minLengthError?.call(value);
   }
@@ -318,7 +320,7 @@ class _$_MinLengthError implements _MinLengthError {
     TResult Function()? notValidated,
     TResult Function(int value)? minLengthError,
     TResult Function(int value)? maxLengthError,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     required TResult orElse(),
   }) {
     if (minLengthError != null) {
@@ -441,7 +443,7 @@ class _$_MaxLengthError implements _MaxLengthError {
     required TResult Function() notValidated,
     required TResult Function(int value) minLengthError,
     required TResult Function(int value) maxLengthError,
-    required TResult Function() valid,
+    required TResult Function(String value) valid,
   }) {
     return maxLengthError(value);
   }
@@ -452,7 +454,7 @@ class _$_MaxLengthError implements _MaxLengthError {
     TResult Function()? notValidated,
     TResult Function(int value)? minLengthError,
     TResult Function(int value)? maxLengthError,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
   }) {
     return maxLengthError?.call(value);
   }
@@ -463,7 +465,7 @@ class _$_MaxLengthError implements _MaxLengthError {
     TResult Function()? notValidated,
     TResult Function(int value)? minLengthError,
     TResult Function(int value)? maxLengthError,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     required TResult orElse(),
   }) {
     if (maxLengthError != null) {
@@ -523,6 +525,7 @@ abstract class _MaxLengthError implements TodoNoteFieldViewModel {
 abstract class _$ValidCopyWith<$Res> {
   factory _$ValidCopyWith(_Valid value, $Res Function(_Valid) then) =
       __$ValidCopyWithImpl<$Res>;
+  $Res call({String value});
 }
 
 /// @nodoc
@@ -534,26 +537,48 @@ class __$ValidCopyWithImpl<$Res>
 
   @override
   _Valid get _value => super._value as _Valid;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_Valid(
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Valid implements _Valid {
-  const _$_Valid();
+  const _$_Valid(this.value);
+
+  @override
+  final String value;
 
   @override
   String toString() {
-    return 'TodoNoteFieldViewModel.valid()';
+    return 'TodoNoteFieldViewModel.valid(value: $value)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Valid);
+        (other.runtimeType == runtimeType &&
+            other is _Valid &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ValidCopyWith<_Valid> get copyWith =>
+      __$ValidCopyWithImpl<_Valid>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -561,9 +586,9 @@ class _$_Valid implements _Valid {
     required TResult Function() notValidated,
     required TResult Function(int value) minLengthError,
     required TResult Function(int value) maxLengthError,
-    required TResult Function() valid,
+    required TResult Function(String value) valid,
   }) {
-    return valid();
+    return valid(value);
   }
 
   @override
@@ -572,9 +597,9 @@ class _$_Valid implements _Valid {
     TResult Function()? notValidated,
     TResult Function(int value)? minLengthError,
     TResult Function(int value)? maxLengthError,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
   }) {
-    return valid?.call();
+    return valid?.call(value);
   }
 
   @override
@@ -583,11 +608,11 @@ class _$_Valid implements _Valid {
     TResult Function()? notValidated,
     TResult Function(int value)? minLengthError,
     TResult Function(int value)? maxLengthError,
-    TResult Function()? valid,
+    TResult Function(String value)? valid,
     required TResult orElse(),
   }) {
     if (valid != null) {
-      return valid();
+      return valid(value);
     }
     return orElse();
   }
@@ -631,5 +656,9 @@ class _$_Valid implements _Valid {
 }
 
 abstract class _Valid implements TodoNoteFieldViewModel {
-  const factory _Valid() = _$_Valid;
+  const factory _Valid(String value) = _$_Valid;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$ValidCopyWith<_Valid> get copyWith => throw _privateConstructorUsedError;
 }

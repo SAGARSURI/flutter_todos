@@ -4,7 +4,12 @@ import 'package:flutter_todos/features/submit_todo/di/submit_todo_provider.dart'
 import 'package:flutter_todos/features/submit_todo/presentation/widgets/todo_note_field/todo_note_field_notifier.dart';
 
 class TodoNoteField extends ConsumerWidget {
-  const TodoNoteField({Key? key}) : super(key: key);
+  const TodoNoteField({
+    Key? key,
+    required this.onValidNote,
+  }) : super(key: key);
+
+  final Function(String) onValidNote;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -17,7 +22,11 @@ class TodoNoteField extends ConsumerWidget {
           _getField(notifier, errorMessage: 'Note is too short'),
       maxLengthError: (maxLength) =>
           _getField(notifier, errorMessage: 'Note is too long'),
-      valid: () => _getField(notifier),
+      valid: (value) {
+        onValidNote(value);
+
+        return _getField(notifier);
+      },
     );
   }
 

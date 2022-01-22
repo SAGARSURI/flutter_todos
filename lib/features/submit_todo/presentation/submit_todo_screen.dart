@@ -26,7 +26,10 @@ class SubmitTodoScreen extends StatelessWidget {
               onValidDate: (value) {},
             ),
             const SizedBox(height: 8),
-            TodoNoteField(key: noteFieldKey),
+            TodoNoteField(
+              key: noteFieldKey,
+              onValidNote: (value) {},
+            ),
             const Spacer(),
             ElevatedButton(
               onPressed: () {},

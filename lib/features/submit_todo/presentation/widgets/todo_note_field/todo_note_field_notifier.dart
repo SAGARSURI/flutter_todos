@@ -14,7 +14,7 @@ class TodoNoteFieldNotifier extends StateNotifier<TodoNoteFieldViewModel> {
     } else if (trimmedInput.length > 100) {
       state = TodoNoteFieldViewModel.maxLengthError(_maxLength);
     } else {
-      state = TodoNoteFieldViewModel.valid();
+      state = TodoNoteFieldViewModel.valid(trimmedInput);
     }
   }
 }

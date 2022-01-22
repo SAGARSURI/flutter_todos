@@ -88,11 +88,11 @@ void main() {
           expectedState = state;
         });
 
-        sut.validate("""This is valid note.""");
+        sut.validate("This is valid note.");
 
         expect(
           expectedState,
-          equals(TodoNoteFieldViewModel.valid()),
+          equals(TodoNoteFieldViewModel.valid("This is valid note.")),
         );
       },
     );
