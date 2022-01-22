@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_todos/features/submit_todo/di/submit_todo_provider.dart';
 import 'package:flutter_todos/features/submit_todo/presentation/widgets/todo_date_field/todo_date_field_notifier.dart';
 import 'package:flutter_todos/features/submit_todo/presentation/widgets/todo_date_field/todo_date_formatter.dart';
-import 'package:fpdart/fpdart.dart';
 
 class TodoDateField extends ConsumerWidget {
   const TodoDateField({
