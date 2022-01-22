@@ -32,18 +32,19 @@ void main() {
   });
 
   test(
-      'state SHOULD be minLengthError WHEN input has extra space after 2 chars',
-      () {
-    var expectedState;
+    'state SHOULD be minLengthError WHEN input has extra space after 2 chars',
+    () {
+      var expectedState;
 
-    sut.addListener((state) {
-      expectedState = state;
-    });
+      sut.addListener((state) {
+        expectedState = state;
+      });
 
-    sut.validate("sa   ");
+      sut.validate("sa   ");
 
-    expect(expectedState, equals(TodoTitleFieldViewModel.minLengthError(3)));
-  });
+      expect(expectedState, equals(TodoTitleFieldViewModel.minLengthError(3)));
+    },
+  );
 
   test('state SHOULD be maxLengthError WHEN input has length more then 20', () {
     var expectedState;
@@ -84,7 +85,9 @@ void main() {
 
     sut.validate("This is a title");
 
-    expect(expectedState,
-        equals(TodoTitleFieldViewModel.valid("This is a title")));
+    expect(
+      expectedState,
+      equals(TodoTitleFieldViewModel.valid("This is a title")),
+    );
   });
 }
