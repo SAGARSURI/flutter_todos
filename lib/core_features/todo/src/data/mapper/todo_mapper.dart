@@ -9,3 +9,11 @@ Todo mapTodo(LocalTodo localTodo) {
     date: localTodo.date,
   );
 }
+
+LocalTodo mapLocalTodo(Todo todo) {
+  return LocalTodo(
+    title: todo.title,
+    date: todo.date,
+    note: todo.note,
+  );
+}

@@ -8,7 +8,7 @@ class LocalTodo {
   @Property(type: PropertyType.date)
   DateTime date;
   LocalTodo({
-    required this.id,
+    this.id = 0,
     required this.title,
     required this.note,
     required this.date,

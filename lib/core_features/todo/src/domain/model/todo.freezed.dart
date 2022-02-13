@@ -18,7 +18,7 @@ class _$TodoTearOff {
   const _$TodoTearOff();
 
   _Todo make(
-      {required int id,
+      {int id = 0,
       required String title,
       required String note,
       required DateTime date}) {
@@ -171,11 +171,12 @@ class __$TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res>
 
 class _$_Todo with DiagnosticableTreeMixin implements _Todo {
   const _$_Todo(
-      {required this.id,
+      {this.id = 0,
       required this.title,
       required this.note,
       required this.date});
 
+  @JsonKey(defaultValue: 0)
   @override
   final int id;
   @override
@@ -280,7 +281,7 @@ class _$_Todo with DiagnosticableTreeMixin implements _Todo {
 
 abstract class _Todo implements Todo {
   const factory _Todo(
-      {required int id,
+      {int id,
       required String title,
       required String note,
       required DateTime date}) = _$_Todo;

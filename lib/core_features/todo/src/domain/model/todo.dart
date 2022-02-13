@@ -6,7 +6,7 @@ part 'todo.freezed.dart';
 @freezed
 class Todo with _$Todo {
   const factory Todo.make({
-    required int id,
+    @Default(0) int id,
     required String title,
     required String note,
     required DateTime date,

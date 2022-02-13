@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_todos/features/submit_todo/presentation/widgets/todo_note_field/todo_note_field.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:mocktail/mocktail.dart';
 
 void main() {
@@ -11,11 +12,16 @@ void main() {
     mockOnValidNote = MockOnValidNote();
   });
 
+  setUpAll(() {
+    registerFallbackValue(MockOption());
+  });
+
   testWidgets(
     'TodoNoteField SHOULD show TextField WHEN it is created',
     (tester) async {
       await tester.pumpWidget(_testableWidget(mockOnValidNote));
       expect(find.byType(TextField), findsOneWidget);
+      verify(() => mockOnValidNote(Option.none())).called(1);
     },
   );
 
@@ -30,6 +36,7 @@ void main() {
       final textField =
           find.byType(TextField).evaluate().single.widget as TextField;
       expect(textField.decoration?.errorText, equals('Note is too short'));
+      verify(() => mockOnValidNote(Option.none())).called(1);
     },
   );
 
@@ -50,6 +57,7 @@ void main() {
       final textField =
           find.byType(TextField).evaluate().single.widget as TextField;
       expect(textField.decoration?.errorText, equals('Note is too long'));
+      verify(() => mockOnValidNote(Option.none())).called(1);
     },
   );
 
@@ -67,30 +75,19 @@ void main() {
       final textField =
           find.byType(TextField).evaluate().single.widget as TextField;
       expect(textField.decoration?.errorText, isNull);
-    },
-  );
-
-  testWidgets(
-    'TodoNoteField SHOULD return note WHEN input is valid',
-    (tester) async {
-      await tester.pumpWidget(_testableWidget(mockOnValidNote));
-
-      await tester.enterText(
-        find.byType(TodoNoteField),
-        'This is a good note.',
-      );
-      await tester.pump();
-
-      verify(() => mockOnValidNote(any())).called(1);
+      verify(() => mockOnValidNote(Option.of('This is a good note.')))
+          .called(1);
     },
   );
 }
 
 abstract class OnValidNote {
-  void call(String value);
+  void call(Option<String> value);
 }
 
 class MockOnValidNote extends Mock implements OnValidNote {}
+
+class MockOption extends Mock implements Option<String> {}
 
 Widget _testableWidget(MockOnValidNote mockOnValidNote) {
   return ProviderScope(

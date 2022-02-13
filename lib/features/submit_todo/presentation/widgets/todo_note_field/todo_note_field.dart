@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_todos/features/submit_todo/di/submit_todo_provider.dart';
 import 'package:flutter_todos/features/submit_todo/presentation/widgets/todo_note_field/todo_note_field_notifier.dart';
+import 'package:fpdart/fpdart.dart';
 
 class TodoNoteField extends ConsumerWidget {
   const TodoNoteField({
@@ -9,7 +10,7 @@ class TodoNoteField extends ConsumerWidget {
     required this.onValidNote,
   }) : super(key: key);
 
-  final Function(String) onValidNote;
+  final Function(Option<String>) onValidNote;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -17,13 +18,23 @@ class TodoNoteField extends ConsumerWidget {
     final notifier = ref.watch(todoNoteFieldNotifierProvider.notifier);
 
     return viewModel.when(
-      notValidated: () => _getField(notifier),
-      minLengthError: (minLength) =>
-          _getField(notifier, errorMessage: 'Note is too short'),
-      maxLengthError: (maxLength) =>
-          _getField(notifier, errorMessage: 'Note is too long'),
+      notValidated: () {
+        onValidNote(Option.none());
+
+        return _getField(notifier);
+      },
+      minLengthError: (minLength) {
+        onValidNote(Option.none());
+
+        return _getField(notifier, errorMessage: 'Note is too short');
+      },
+      maxLengthError: (maxLength) {
+        onValidNote(Option.none());
+
+        return _getField(notifier, errorMessage: 'Note is too long');
+      },
       valid: (value) {
-        onValidNote(value);
+        onValidNote(Option.of(value));
 
         return _getField(notifier);
       },
