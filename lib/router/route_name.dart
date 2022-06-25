@@ -1,2 +1,2 @@
-const submitTodoScreenRoute = 'addTodoScreen';
+const submitTodoScreenRoute = 'add_todo_screen';
 const homeRoute = 'home';
