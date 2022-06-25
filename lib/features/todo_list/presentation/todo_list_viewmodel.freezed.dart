@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'todo_list_viewmodel.dart';
@@ -11,31 +12,7 @@ part of 'todo_list_viewmodel.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TodoListViewModelTearOff {
-  const _$TodoListViewModelTearOff();
-
-  _Loading loading() {
-    return const _Loading();
-  }
-
-  _Success success(List<Todo> todos) {
-    return _Success(
-      todos,
-    );
-  }
-
-  _Error error(String error) {
-    return _Error(
-      error,
-    );
-  }
-}
-
-/// @nodoc
-const $TodoListViewModel = _$TodoListViewModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TodoListViewModel {
@@ -103,19 +80,21 @@ class _$TodoListViewModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-      __$LoadingCopyWithImpl<$Res>;
+abstract class _$$_LoadingCopyWith<$Res> {
+  factory _$$_LoadingCopyWith(
+          _$_Loading value, $Res Function(_$_Loading) then) =
+      __$$_LoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$TodoListViewModelCopyWithImpl<$Res>
-    implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-      : super(_value, (v) => _then(v as _Loading));
+class __$$_LoadingCopyWithImpl<$Res>
+    extends _$TodoListViewModelCopyWithImpl<$Res>
+    implements _$$_LoadingCopyWith<$Res> {
+  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+      : super(_value, (v) => _then(v as _$_Loading));
 
   @override
-  _Loading get _value => super._value as _Loading;
+  _$_Loading get _value => super._value as _$_Loading;
 }
 
 /// @nodoc
@@ -131,7 +110,7 @@ class _$_Loading implements _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Loading);
+        (other.runtimeType == runtimeType && other is _$_Loading);
   }
 
   @override
@@ -211,28 +190,30 @@ abstract class _Loading implements TodoListViewModel {
 }
 
 /// @nodoc
-abstract class _$SuccessCopyWith<$Res> {
-  factory _$SuccessCopyWith(_Success value, $Res Function(_Success) then) =
-      __$SuccessCopyWithImpl<$Res>;
+abstract class _$$_SuccessCopyWith<$Res> {
+  factory _$$_SuccessCopyWith(
+          _$_Success value, $Res Function(_$_Success) then) =
+      __$$_SuccessCopyWithImpl<$Res>;
   $Res call({List<Todo> todos});
 }
 
 /// @nodoc
-class __$SuccessCopyWithImpl<$Res> extends _$TodoListViewModelCopyWithImpl<$Res>
-    implements _$SuccessCopyWith<$Res> {
-  __$SuccessCopyWithImpl(_Success _value, $Res Function(_Success) _then)
-      : super(_value, (v) => _then(v as _Success));
+class __$$_SuccessCopyWithImpl<$Res>
+    extends _$TodoListViewModelCopyWithImpl<$Res>
+    implements _$$_SuccessCopyWith<$Res> {
+  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
+      : super(_value, (v) => _then(v as _$_Success));
 
   @override
-  _Success get _value => super._value as _Success;
+  _$_Success get _value => super._value as _$_Success;
 
   @override
   $Res call({
     Object? todos = freezed,
   }) {
-    return _then(_Success(
+    return _then(_$_Success(
       todos == freezed
-          ? _value.todos
+          ? _value._todos
           : todos // ignore: cast_nullable_to_non_nullable
               as List<Todo>,
     ));
@@ -242,10 +223,14 @@ class __$SuccessCopyWithImpl<$Res> extends _$TodoListViewModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Success implements _Success {
-  const _$_Success(this.todos);
+  const _$_Success(final List<Todo> todos) : _todos = todos;
 
+  final List<Todo> _todos;
   @override
-  final List<Todo> todos;
+  List<Todo> get todos {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_todos);
+  }
 
   @override
   String toString() {
@@ -256,18 +241,18 @@ class _$_Success implements _Success {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Success &&
-            const DeepCollectionEquality().equals(other.todos, todos));
+            other is _$_Success &&
+            const DeepCollectionEquality().equals(other._todos, _todos));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(todos));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_todos));
 
   @JsonKey(ignore: true)
   @override
-  _$SuccessCopyWith<_Success> get copyWith =>
-      __$SuccessCopyWithImpl<_Success>(this, _$identity);
+  _$$_SuccessCopyWith<_$_Success> get copyWith =>
+      __$$_SuccessCopyWithImpl<_$_Success>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -339,35 +324,35 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements TodoListViewModel {
-  const factory _Success(List<Todo> todos) = _$_Success;
+  const factory _Success(final List<Todo> todos) = _$_Success;
 
-  List<Todo> get todos;
+  List<Todo> get todos => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$SuccessCopyWith<_Success> get copyWith =>
+  _$$_SuccessCopyWith<_$_Success> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
+abstract class _$$_ErrorCopyWith<$Res> {
+  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
+      __$$_ErrorCopyWithImpl<$Res>;
   $Res call({String error});
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$TodoListViewModelCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
+class __$$_ErrorCopyWithImpl<$Res> extends _$TodoListViewModelCopyWithImpl<$Res>
+    implements _$$_ErrorCopyWith<$Res> {
+  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+      : super(_value, (v) => _then(v as _$_Error));
 
   @override
-  _Error get _value => super._value as _Error;
+  _$_Error get _value => super._value as _$_Error;
 
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_Error(
+    return _then(_$_Error(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -393,17 +378,18 @@ class _$_Error implements _Error {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Error &&
-            (identical(other.error, error) || other.error == error));
+            other is _$_Error &&
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, error);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorCopyWith<_Error> get copyWith =>
-      __$ErrorCopyWithImpl<_Error>(this, _$identity);
+  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -475,9 +461,10 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements TodoListViewModel {
-  const factory _Error(String error) = _$_Error;
+  const factory _Error(final String error) = _$_Error;
 
-  String get error;
+  String get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
+  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'todo_date_field_viewmodel.dart';
@@ -11,33 +12,7 @@ part of 'todo_date_field_viewmodel.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TodoDateFieldViewModelTearOff {
-  const _$TodoDateFieldViewModelTearOff();
-
-  _NotValidated notValidated() {
-    return const _NotValidated();
-  }
-
-  _Valid valid(String value) {
-    return _Valid(
-      value,
-    );
-  }
-
-  _InvalidDateFormatError invalidDateFormatError() {
-    return const _InvalidDateFormatError();
-  }
-
-  _InvalidDateError invalidDateError() {
-    return const _InvalidDateError();
-  }
-}
-
-/// @nodoc
-const $TodoDateFieldViewModel = _$TodoDateFieldViewModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TodoDateFieldViewModel {
@@ -112,22 +87,22 @@ class _$TodoDateFieldViewModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$NotValidatedCopyWith<$Res> {
-  factory _$NotValidatedCopyWith(
-          _NotValidated value, $Res Function(_NotValidated) then) =
-      __$NotValidatedCopyWithImpl<$Res>;
+abstract class _$$_NotValidatedCopyWith<$Res> {
+  factory _$$_NotValidatedCopyWith(
+          _$_NotValidated value, $Res Function(_$_NotValidated) then) =
+      __$$_NotValidatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NotValidatedCopyWithImpl<$Res>
+class __$$_NotValidatedCopyWithImpl<$Res>
     extends _$TodoDateFieldViewModelCopyWithImpl<$Res>
-    implements _$NotValidatedCopyWith<$Res> {
-  __$NotValidatedCopyWithImpl(
-      _NotValidated _value, $Res Function(_NotValidated) _then)
-      : super(_value, (v) => _then(v as _NotValidated));
+    implements _$$_NotValidatedCopyWith<$Res> {
+  __$$_NotValidatedCopyWithImpl(
+      _$_NotValidated _value, $Res Function(_$_NotValidated) _then)
+      : super(_value, (v) => _then(v as _$_NotValidated));
 
   @override
-  _NotValidated get _value => super._value as _NotValidated;
+  _$_NotValidated get _value => super._value as _$_NotValidated;
 }
 
 /// @nodoc
@@ -143,7 +118,7 @@ class _$_NotValidated implements _NotValidated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _NotValidated);
+        (other.runtimeType == runtimeType && other is _$_NotValidated);
   }
 
   @override
@@ -230,27 +205,27 @@ abstract class _NotValidated implements TodoDateFieldViewModel {
 }
 
 /// @nodoc
-abstract class _$ValidCopyWith<$Res> {
-  factory _$ValidCopyWith(_Valid value, $Res Function(_Valid) then) =
-      __$ValidCopyWithImpl<$Res>;
+abstract class _$$_ValidCopyWith<$Res> {
+  factory _$$_ValidCopyWith(_$_Valid value, $Res Function(_$_Valid) then) =
+      __$$_ValidCopyWithImpl<$Res>;
   $Res call({String value});
 }
 
 /// @nodoc
-class __$ValidCopyWithImpl<$Res>
+class __$$_ValidCopyWithImpl<$Res>
     extends _$TodoDateFieldViewModelCopyWithImpl<$Res>
-    implements _$ValidCopyWith<$Res> {
-  __$ValidCopyWithImpl(_Valid _value, $Res Function(_Valid) _then)
-      : super(_value, (v) => _then(v as _Valid));
+    implements _$$_ValidCopyWith<$Res> {
+  __$$_ValidCopyWithImpl(_$_Valid _value, $Res Function(_$_Valid) _then)
+      : super(_value, (v) => _then(v as _$_Valid));
 
   @override
-  _Valid get _value => super._value as _Valid;
+  _$_Valid get _value => super._value as _$_Valid;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_Valid(
+    return _then(_$_Valid(
       value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -276,17 +251,18 @@ class _$_Valid implements _Valid {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Valid &&
-            (identical(other.value, value) || other.value == value));
+            other is _$_Valid &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$ValidCopyWith<_Valid> get copyWith =>
-      __$ValidCopyWithImpl<_Valid>(this, _$identity);
+  _$$_ValidCopyWith<_$_Valid> get copyWith =>
+      __$$_ValidCopyWithImpl<_$_Valid>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -365,30 +341,32 @@ class _$_Valid implements _Valid {
 }
 
 abstract class _Valid implements TodoDateFieldViewModel {
-  const factory _Valid(String value) = _$_Valid;
+  const factory _Valid(final String value) = _$_Valid;
 
-  String get value;
+  String get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ValidCopyWith<_Valid> get copyWith => throw _privateConstructorUsedError;
+  _$$_ValidCopyWith<_$_Valid> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$InvalidDateFormatErrorCopyWith<$Res> {
-  factory _$InvalidDateFormatErrorCopyWith(_InvalidDateFormatError value,
-          $Res Function(_InvalidDateFormatError) then) =
-      __$InvalidDateFormatErrorCopyWithImpl<$Res>;
+abstract class _$$_InvalidDateFormatErrorCopyWith<$Res> {
+  factory _$$_InvalidDateFormatErrorCopyWith(_$_InvalidDateFormatError value,
+          $Res Function(_$_InvalidDateFormatError) then) =
+      __$$_InvalidDateFormatErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InvalidDateFormatErrorCopyWithImpl<$Res>
+class __$$_InvalidDateFormatErrorCopyWithImpl<$Res>
     extends _$TodoDateFieldViewModelCopyWithImpl<$Res>
-    implements _$InvalidDateFormatErrorCopyWith<$Res> {
-  __$InvalidDateFormatErrorCopyWithImpl(_InvalidDateFormatError _value,
-      $Res Function(_InvalidDateFormatError) _then)
-      : super(_value, (v) => _then(v as _InvalidDateFormatError));
+    implements _$$_InvalidDateFormatErrorCopyWith<$Res> {
+  __$$_InvalidDateFormatErrorCopyWithImpl(_$_InvalidDateFormatError _value,
+      $Res Function(_$_InvalidDateFormatError) _then)
+      : super(_value, (v) => _then(v as _$_InvalidDateFormatError));
 
   @override
-  _InvalidDateFormatError get _value => super._value as _InvalidDateFormatError;
+  _$_InvalidDateFormatError get _value =>
+      super._value as _$_InvalidDateFormatError;
 }
 
 /// @nodoc
@@ -404,7 +382,8 @@ class _$_InvalidDateFormatError implements _InvalidDateFormatError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _InvalidDateFormatError);
+        (other.runtimeType == runtimeType &&
+            other is _$_InvalidDateFormatError);
   }
 
   @override
@@ -491,22 +470,22 @@ abstract class _InvalidDateFormatError implements TodoDateFieldViewModel {
 }
 
 /// @nodoc
-abstract class _$InvalidDateErrorCopyWith<$Res> {
-  factory _$InvalidDateErrorCopyWith(
-          _InvalidDateError value, $Res Function(_InvalidDateError) then) =
-      __$InvalidDateErrorCopyWithImpl<$Res>;
+abstract class _$$_InvalidDateErrorCopyWith<$Res> {
+  factory _$$_InvalidDateErrorCopyWith(
+          _$_InvalidDateError value, $Res Function(_$_InvalidDateError) then) =
+      __$$_InvalidDateErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InvalidDateErrorCopyWithImpl<$Res>
+class __$$_InvalidDateErrorCopyWithImpl<$Res>
     extends _$TodoDateFieldViewModelCopyWithImpl<$Res>
-    implements _$InvalidDateErrorCopyWith<$Res> {
-  __$InvalidDateErrorCopyWithImpl(
-      _InvalidDateError _value, $Res Function(_InvalidDateError) _then)
-      : super(_value, (v) => _then(v as _InvalidDateError));
+    implements _$$_InvalidDateErrorCopyWith<$Res> {
+  __$$_InvalidDateErrorCopyWithImpl(
+      _$_InvalidDateError _value, $Res Function(_$_InvalidDateError) _then)
+      : super(_value, (v) => _then(v as _$_InvalidDateError));
 
   @override
-  _InvalidDateError get _value => super._value as _InvalidDateError;
+  _$_InvalidDateError get _value => super._value as _$_InvalidDateError;
 }
 
 /// @nodoc
@@ -522,7 +501,7 @@ class _$_InvalidDateError implements _InvalidDateError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _InvalidDateError);
+        (other.runtimeType == runtimeType && other is _$_InvalidDateError);
   }
 
   @override

@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'todo_title_field_viewmodel.dart';
@@ -11,41 +12,7 @@ part of 'todo_title_field_viewmodel.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TodoTitleFieldViewModelTearOff {
-  const _$TodoTitleFieldViewModelTearOff();
-
-  _NotValidated notValidated() {
-    return const _NotValidated();
-  }
-
-  _Valid valid(String value) {
-    return _Valid(
-      value,
-    );
-  }
-
-  _MinLengthError minLengthError(int minLength) {
-    return _MinLengthError(
-      minLength,
-    );
-  }
-
-  _MaxLengthError maxLengthError(int maxLength) {
-    return _MaxLengthError(
-      maxLength,
-    );
-  }
-
-  _InvalidCharactersError invalidCharactersError() {
-    return const _InvalidCharactersError();
-  }
-}
-
-/// @nodoc
-const $TodoTitleFieldViewModel = _$TodoTitleFieldViewModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TodoTitleFieldViewModel {
@@ -126,22 +93,22 @@ class _$TodoTitleFieldViewModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$NotValidatedCopyWith<$Res> {
-  factory _$NotValidatedCopyWith(
-          _NotValidated value, $Res Function(_NotValidated) then) =
-      __$NotValidatedCopyWithImpl<$Res>;
+abstract class _$$_NotValidatedCopyWith<$Res> {
+  factory _$$_NotValidatedCopyWith(
+          _$_NotValidated value, $Res Function(_$_NotValidated) then) =
+      __$$_NotValidatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NotValidatedCopyWithImpl<$Res>
+class __$$_NotValidatedCopyWithImpl<$Res>
     extends _$TodoTitleFieldViewModelCopyWithImpl<$Res>
-    implements _$NotValidatedCopyWith<$Res> {
-  __$NotValidatedCopyWithImpl(
-      _NotValidated _value, $Res Function(_NotValidated) _then)
-      : super(_value, (v) => _then(v as _NotValidated));
+    implements _$$_NotValidatedCopyWith<$Res> {
+  __$$_NotValidatedCopyWithImpl(
+      _$_NotValidated _value, $Res Function(_$_NotValidated) _then)
+      : super(_value, (v) => _then(v as _$_NotValidated));
 
   @override
-  _NotValidated get _value => super._value as _NotValidated;
+  _$_NotValidated get _value => super._value as _$_NotValidated;
 }
 
 /// @nodoc
@@ -157,7 +124,7 @@ class _$_NotValidated implements _NotValidated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _NotValidated);
+        (other.runtimeType == runtimeType && other is _$_NotValidated);
   }
 
   @override
@@ -250,27 +217,27 @@ abstract class _NotValidated implements TodoTitleFieldViewModel {
 }
 
 /// @nodoc
-abstract class _$ValidCopyWith<$Res> {
-  factory _$ValidCopyWith(_Valid value, $Res Function(_Valid) then) =
-      __$ValidCopyWithImpl<$Res>;
+abstract class _$$_ValidCopyWith<$Res> {
+  factory _$$_ValidCopyWith(_$_Valid value, $Res Function(_$_Valid) then) =
+      __$$_ValidCopyWithImpl<$Res>;
   $Res call({String value});
 }
 
 /// @nodoc
-class __$ValidCopyWithImpl<$Res>
+class __$$_ValidCopyWithImpl<$Res>
     extends _$TodoTitleFieldViewModelCopyWithImpl<$Res>
-    implements _$ValidCopyWith<$Res> {
-  __$ValidCopyWithImpl(_Valid _value, $Res Function(_Valid) _then)
-      : super(_value, (v) => _then(v as _Valid));
+    implements _$$_ValidCopyWith<$Res> {
+  __$$_ValidCopyWithImpl(_$_Valid _value, $Res Function(_$_Valid) _then)
+      : super(_value, (v) => _then(v as _$_Valid));
 
   @override
-  _Valid get _value => super._value as _Valid;
+  _$_Valid get _value => super._value as _$_Valid;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_Valid(
+    return _then(_$_Valid(
       value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -296,17 +263,18 @@ class _$_Valid implements _Valid {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Valid &&
-            (identical(other.value, value) || other.value == value));
+            other is _$_Valid &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  _$ValidCopyWith<_Valid> get copyWith =>
-      __$ValidCopyWithImpl<_Valid>(this, _$identity);
+  _$$_ValidCopyWith<_$_Valid> get copyWith =>
+      __$$_ValidCopyWithImpl<_$_Valid>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -391,37 +359,38 @@ class _$_Valid implements _Valid {
 }
 
 abstract class _Valid implements TodoTitleFieldViewModel {
-  const factory _Valid(String value) = _$_Valid;
+  const factory _Valid(final String value) = _$_Valid;
 
-  String get value;
+  String get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ValidCopyWith<_Valid> get copyWith => throw _privateConstructorUsedError;
+  _$$_ValidCopyWith<_$_Valid> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$MinLengthErrorCopyWith<$Res> {
-  factory _$MinLengthErrorCopyWith(
-          _MinLengthError value, $Res Function(_MinLengthError) then) =
-      __$MinLengthErrorCopyWithImpl<$Res>;
+abstract class _$$_MinLengthErrorCopyWith<$Res> {
+  factory _$$_MinLengthErrorCopyWith(
+          _$_MinLengthError value, $Res Function(_$_MinLengthError) then) =
+      __$$_MinLengthErrorCopyWithImpl<$Res>;
   $Res call({int minLength});
 }
 
 /// @nodoc
-class __$MinLengthErrorCopyWithImpl<$Res>
+class __$$_MinLengthErrorCopyWithImpl<$Res>
     extends _$TodoTitleFieldViewModelCopyWithImpl<$Res>
-    implements _$MinLengthErrorCopyWith<$Res> {
-  __$MinLengthErrorCopyWithImpl(
-      _MinLengthError _value, $Res Function(_MinLengthError) _then)
-      : super(_value, (v) => _then(v as _MinLengthError));
+    implements _$$_MinLengthErrorCopyWith<$Res> {
+  __$$_MinLengthErrorCopyWithImpl(
+      _$_MinLengthError _value, $Res Function(_$_MinLengthError) _then)
+      : super(_value, (v) => _then(v as _$_MinLengthError));
 
   @override
-  _MinLengthError get _value => super._value as _MinLengthError;
+  _$_MinLengthError get _value => super._value as _$_MinLengthError;
 
   @override
   $Res call({
     Object? minLength = freezed,
   }) {
-    return _then(_MinLengthError(
+    return _then(_$_MinLengthError(
       minLength == freezed
           ? _value.minLength
           : minLength // ignore: cast_nullable_to_non_nullable
@@ -447,18 +416,18 @@ class _$_MinLengthError implements _MinLengthError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _MinLengthError &&
-            (identical(other.minLength, minLength) ||
-                other.minLength == minLength));
+            other is _$_MinLengthError &&
+            const DeepCollectionEquality().equals(other.minLength, minLength));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, minLength);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(minLength));
 
   @JsonKey(ignore: true)
   @override
-  _$MinLengthErrorCopyWith<_MinLengthError> get copyWith =>
-      __$MinLengthErrorCopyWithImpl<_MinLengthError>(this, _$identity);
+  _$$_MinLengthErrorCopyWith<_$_MinLengthError> get copyWith =>
+      __$$_MinLengthErrorCopyWithImpl<_$_MinLengthError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -543,38 +512,38 @@ class _$_MinLengthError implements _MinLengthError {
 }
 
 abstract class _MinLengthError implements TodoTitleFieldViewModel {
-  const factory _MinLengthError(int minLength) = _$_MinLengthError;
+  const factory _MinLengthError(final int minLength) = _$_MinLengthError;
 
-  int get minLength;
+  int get minLength => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$MinLengthErrorCopyWith<_MinLengthError> get copyWith =>
+  _$$_MinLengthErrorCopyWith<_$_MinLengthError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$MaxLengthErrorCopyWith<$Res> {
-  factory _$MaxLengthErrorCopyWith(
-          _MaxLengthError value, $Res Function(_MaxLengthError) then) =
-      __$MaxLengthErrorCopyWithImpl<$Res>;
+abstract class _$$_MaxLengthErrorCopyWith<$Res> {
+  factory _$$_MaxLengthErrorCopyWith(
+          _$_MaxLengthError value, $Res Function(_$_MaxLengthError) then) =
+      __$$_MaxLengthErrorCopyWithImpl<$Res>;
   $Res call({int maxLength});
 }
 
 /// @nodoc
-class __$MaxLengthErrorCopyWithImpl<$Res>
+class __$$_MaxLengthErrorCopyWithImpl<$Res>
     extends _$TodoTitleFieldViewModelCopyWithImpl<$Res>
-    implements _$MaxLengthErrorCopyWith<$Res> {
-  __$MaxLengthErrorCopyWithImpl(
-      _MaxLengthError _value, $Res Function(_MaxLengthError) _then)
-      : super(_value, (v) => _then(v as _MaxLengthError));
+    implements _$$_MaxLengthErrorCopyWith<$Res> {
+  __$$_MaxLengthErrorCopyWithImpl(
+      _$_MaxLengthError _value, $Res Function(_$_MaxLengthError) _then)
+      : super(_value, (v) => _then(v as _$_MaxLengthError));
 
   @override
-  _MaxLengthError get _value => super._value as _MaxLengthError;
+  _$_MaxLengthError get _value => super._value as _$_MaxLengthError;
 
   @override
   $Res call({
     Object? maxLength = freezed,
   }) {
-    return _then(_MaxLengthError(
+    return _then(_$_MaxLengthError(
       maxLength == freezed
           ? _value.maxLength
           : maxLength // ignore: cast_nullable_to_non_nullable
@@ -600,18 +569,18 @@ class _$_MaxLengthError implements _MaxLengthError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _MaxLengthError &&
-            (identical(other.maxLength, maxLength) ||
-                other.maxLength == maxLength));
+            other is _$_MaxLengthError &&
+            const DeepCollectionEquality().equals(other.maxLength, maxLength));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, maxLength);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(maxLength));
 
   @JsonKey(ignore: true)
   @override
-  _$MaxLengthErrorCopyWith<_MaxLengthError> get copyWith =>
-      __$MaxLengthErrorCopyWithImpl<_MaxLengthError>(this, _$identity);
+  _$$_MaxLengthErrorCopyWith<_$_MaxLengthError> get copyWith =>
+      __$$_MaxLengthErrorCopyWithImpl<_$_MaxLengthError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -696,31 +665,32 @@ class _$_MaxLengthError implements _MaxLengthError {
 }
 
 abstract class _MaxLengthError implements TodoTitleFieldViewModel {
-  const factory _MaxLengthError(int maxLength) = _$_MaxLengthError;
+  const factory _MaxLengthError(final int maxLength) = _$_MaxLengthError;
 
-  int get maxLength;
+  int get maxLength => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$MaxLengthErrorCopyWith<_MaxLengthError> get copyWith =>
+  _$$_MaxLengthErrorCopyWith<_$_MaxLengthError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$InvalidCharactersErrorCopyWith<$Res> {
-  factory _$InvalidCharactersErrorCopyWith(_InvalidCharactersError value,
-          $Res Function(_InvalidCharactersError) then) =
-      __$InvalidCharactersErrorCopyWithImpl<$Res>;
+abstract class _$$_InvalidCharactersErrorCopyWith<$Res> {
+  factory _$$_InvalidCharactersErrorCopyWith(_$_InvalidCharactersError value,
+          $Res Function(_$_InvalidCharactersError) then) =
+      __$$_InvalidCharactersErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InvalidCharactersErrorCopyWithImpl<$Res>
+class __$$_InvalidCharactersErrorCopyWithImpl<$Res>
     extends _$TodoTitleFieldViewModelCopyWithImpl<$Res>
-    implements _$InvalidCharactersErrorCopyWith<$Res> {
-  __$InvalidCharactersErrorCopyWithImpl(_InvalidCharactersError _value,
-      $Res Function(_InvalidCharactersError) _then)
-      : super(_value, (v) => _then(v as _InvalidCharactersError));
+    implements _$$_InvalidCharactersErrorCopyWith<$Res> {
+  __$$_InvalidCharactersErrorCopyWithImpl(_$_InvalidCharactersError _value,
+      $Res Function(_$_InvalidCharactersError) _then)
+      : super(_value, (v) => _then(v as _$_InvalidCharactersError));
 
   @override
-  _InvalidCharactersError get _value => super._value as _InvalidCharactersError;
+  _$_InvalidCharactersError get _value =>
+      super._value as _$_InvalidCharactersError;
 }
 
 /// @nodoc
@@ -736,7 +706,8 @@ class _$_InvalidCharactersError implements _InvalidCharactersError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _InvalidCharactersError);
+        (other.runtimeType == runtimeType &&
+            other is _$_InvalidCharactersError);
   }
 
   @override

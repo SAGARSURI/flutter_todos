@@ -53,6 +53,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routeInformationParser: _router.routeInformationParser,
+      routeInformationProvider: _router.routeInformationProvider,
       routerDelegate: _router.routerDelegate,
       theme: FlexColorScheme.light(scheme: FlexScheme.mandyRed).toTheme,
       darkTheme: FlexColorScheme.dark(scheme: FlexScheme.mandyRed).toTheme,
